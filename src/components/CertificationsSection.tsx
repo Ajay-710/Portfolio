@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shield, Brain, Code, Award, ExternalLink, GraduationCap } from "lucide-react";
+import { Shield, Brain, Code, Award, ExternalLink, GraduationCap, Cloud } from "lucide-react";
 
 const certificationsData = [
   {
@@ -25,6 +25,28 @@ const certificationsData = [
       { title: "Prompt Engineering", issuer: "Infosys Springboard", year: "2026", link: "https://drive.google.com/file/d/1FL1iPEJYh7XXUJ5lNrvL3jkQ0JWadZmZ/view" },
       { title: "Computer Vision 101", issuer: "Infosys Springboard", year: "2026", link: "https://drive.google.com/file/d/1RnOcAV7BUavJEmPpEr-m8mb51wwVyjDK/view" },
       { title: "Introduction to Robotic Process and Automation", issuer: "Infosys Springboard", year: "2026", link: "https://drive.google.com/file/d/1qKKgNTn1oDdnlEitfzVwQ6dzx5DVHPdo/view" }
+    ]
+  },
+  {
+    category: "Google Cloud",
+    icon: <Cloud size={20} />,
+    items: [
+      { title: "Introduction to Generative AI", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/18177682" },
+      { title: "Develop Gen AI Apps with Gemini and Streamlit", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/15650039" },
+      { title: "Explore Generative AI with the Gemini API in Vertex AI", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/15648555" },
+      { title: "Inspect Rich Documents with Gemini Multimodality and Multimodal RAG", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/15511282" },
+      { title: "Build Real World AI Applications with Gemini and Imagen", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/15014834" },
+      { title: "Prompt Design in Vertex AI", issuer: "Google Cloud", year: "2025", link: "https://www.skills.google/public_profiles/bc37325e-4068-438d-97b1-0cd3051359a2/badges/14825790" },
+      { title: "Elastic Google Cloud Infrastructure: Scaling and Automation", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23338349" },
+      { title: "Essential Google Cloud Infrastructure: Core Services", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23336637" },
+      { title: "Build Infrastructure with Terraform on Google Cloud", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23333944" },
+      { title: "Develop Your Google Cloud Network", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23239154" },
+      { title: "Essential Google Cloud Infrastructure: Foundation", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23234316" },
+      { title: "Set Up an App Dev Environment on Google Cloud", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23221800" },
+      { title: "Implementing Cloud Load Balancing for Compute Engine", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23206723" },
+      { title: "Getting Started with Google Kubernetes Engine", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23195868" },
+      { title: "Google Cloud Fundamentals: Core Infrastructure", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23193489" },
+      { title: "Preparing for Your Associate Cloud Engineer Journey", issuer: "Google Cloud", year: "2026", link: "https://www.skills.google/public_profiles/1bc4673d-3f5e-4f9f-8661-cff702481f47/badges/23071702" }
     ]
   },
   {
