@@ -25,8 +25,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!mounted) return null;
-
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-accent/30 selection:text-accent">
       <nav className={`fixed top-0 inset-x-0 h-20 z-50 transition-all duration-500 ${scrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/10 shadow-lg" : "bg-transparent pt-4"}`}>
