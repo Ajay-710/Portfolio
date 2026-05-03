@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased selection:bg-accent/30 selection:text-accent">
+    <div className="min-h-screen bg-transparent text-foreground antialiased selection:bg-accent/30 selection:text-accent">
       <nav className={`fixed top-0 inset-x-0 h-20 z-50 transition-all duration-500 ${scrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/10 shadow-lg" : "bg-transparent pt-4"}`}>
         <div className={`max-w-7xl mx-auto px-6 h-full flex items-center justify-between transition-all duration-500 ${scrolled ? "" : "glass rounded-2xl mx-4 px-6"}`}>
           <a href="#home" className="text-2xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-2">
