@@ -21,10 +21,54 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center pt-24 pb-10 overflow-hidden">
-      {/* Premium Background Elements */}
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-32 w-[30rem] h-[30rem] bg-accent-2/10 rounded-full blur-[150px] pointer-events-none" />
+    <section id="home" className="min-h-[80vh] relative flex items-center justify-center pt-24 pb-10 overflow-hidden">
+      {/* Light Bar / Lamp Effect */}
+      <div className="absolute top-0 isolate z-0 flex w-screen flex-1 items-start justify-center pointer-events-none">
+        <div className="absolute top-0 z-0 h-48 w-screen bg-transparent opacity-10 backdrop-blur-md" />
+
+        {/* Main glow */}
+        <div className="absolute inset-auto z-10 h-36 w-[28rem] -translate-y-[-30%] rounded-full bg-accent/60 opacity-80 blur-3xl" />
+
+        {/* Lamp effect */}
+        <motion.div
+          initial={{ width: "8rem" }}
+          viewport={{ once: true }}
+          transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
+          whileInView={{ width: "16rem" }}
+          className="absolute top-0 z-20 h-36 -translate-y-[20%] rounded-full bg-accent/60 blur-2xl"
+        />
+
+        {/* Top line */}
+        <motion.div
+          initial={{ width: "15rem" }}
+          viewport={{ once: true }}
+          transition={{ ease: "easeInOut", delay: 0.3, duration: 0.8 }}
+          whileInView={{ width: "30rem" }}
+          className="absolute inset-auto z-20 h-0.5 -translate-y-[-10%] bg-accent/60"
+        />
+
+        {/* Left gradient cone */}
+        <motion.div
+          initial={{ opacity: 0.5, width: "15rem" }}
+          whileInView={{ opacity: 1, width: "30rem" }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+          className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] from-accent/60 via-transparent to-transparent [--conic-position:from_70deg_at_center_top] [mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]"
+        />
+
+        {/* Right gradient cone */}
+        <motion.div
+          initial={{ opacity: 0.5, width: "15rem" }}
+          whileInView={{ opacity: 1, width: "30rem" }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          style={{
+            backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+          }}
+          className="absolute inset-auto left-1/2 h-56 w-[30rem] from-transparent via-transparent to-accent/60 [--conic-position:from_290deg_at_center_top] [mask-image:linear-gradient(to_bottom,white_20%,transparent_100%)]"
+        />
+      </div>
       
       <div className="max-w-5xl w-full mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-10">
         <motion.div
@@ -41,12 +85,12 @@ export default function HeroSection() {
             <span className="text-foreground/80">Available for Internships</span>
           </motion.div>
           
-          <motion.h1 variants={item} className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6">
+          <motion.h1 variants={item} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
             Hi, I'm <br className="md:hidden" />
             <span className="text-gradient drop-shadow-sm">Pendem Ajay</span>
           </motion.h1>
           
-          <motion.h2 variants={item} className="text-xl md:text-3xl text-foreground/70 font-medium mb-8 max-w-3xl leading-relaxed">
+          <motion.h2 variants={item} className="text-xl md:text-2xl text-foreground/70 font-medium mb-8 max-w-3xl leading-relaxed">
             Cyber Security Enthusiast & <span className="text-foreground/90">AI Engineer</span>
           </motion.h2>
           
