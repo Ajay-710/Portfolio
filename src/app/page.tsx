@@ -1,65 +1,84 @@
-import Image from "next/image";
+"use client";
+
+import HeroSection from "@/components/HeroSection";
+import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
+import { Mail, ArrowUpRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-background text-foreground antialiased selection:bg-accent/30 selection:text-accent">
+      <nav className={`fixed top-0 inset-x-0 h-20 z-50 transition-all duration-500 ${scrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/10 shadow-lg" : "bg-transparent pt-4"}`}>
+        <div className={`max-w-7xl mx-auto px-6 h-full flex items-center justify-between transition-all duration-500 ${scrolled ? "" : "glass rounded-2xl mx-4 px-6"}`}>
+          <a href="#home" className="text-2xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-2">
+            Ajay<span className="text-foreground">.</span>
+          </a>
+          <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-foreground/70">
+            <a href="#education" className="hover:text-accent transition-colors">Education</a>
+            <a href="#experience" className="hover:text-accent transition-colors">Experience</a>
+            <a href="#projects" className="hover:text-accent transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
+          </div>
+          <a href="mailto:pendemajay7@gmail.com" className="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-foreground text-sm font-semibold hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-accent/50 hover:text-accent">
+            <span>Hire Me</span>
+            <ArrowUpRight size={16} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+          </a>
+        </div>
+      </nav>
+
+      <main className="flex flex-col">
+        <HeroSection />
+        <EducationSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <SkillsSection />
+      </main>
+
+      <footer className="py-16 relative overflow-hidden border-t border-white/10">
+        <div className="absolute inset-0 bg-background/50 backdrop-blur-sm z-0" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+        
+        <div className="max-w-5xl mx-auto px-6 relative z-10 flex flex-col items-center">
+          <h2 className="text-3xl font-extrabold mb-8 tracking-tight text-foreground bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-2">
+            Pendem Ajay
+          </h2>
+          <div className="flex justify-center gap-8 mb-12">
+            <a href="https://github.com/Ajay-710" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-foreground/70 hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <FaGithub size={24} />
+            </a>
+            <a href="https://linkedin.com/in/ajaypendem775" target="_blank" rel="noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 text-foreground/70 hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <FaLinkedin size={24} />
+            </a>
+            <a href="mailto:pendemajay7@gmail.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-foreground/70 hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <Mail size={24} />
+            </a>
+          </div>
+          <p className="text-sm text-foreground/40 font-medium tracking-wide">
+            © {new Date().getFullYear()} Pendem Ajay. All rights reserved.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
 }
