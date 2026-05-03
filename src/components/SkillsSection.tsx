@@ -12,7 +12,7 @@ const skillCategories = [
   {
     title: "Tools",
     icon: "🛠️",
-    skills: ["Gemini API", "Streamlit", "OpenAI ChatGPT", "Grok", "Nmap", "Burpsuite", "hydra", "wifite", "metasploit framework"]
+    skills: ["n8n", "Gemini API", "Streamlit", "OpenAI ChatGPT", "Grok", "Nmap", "Burpsuite", "hydra", "wifite", "metasploit framework"]
   },
   {
     title: "Languages & Others",

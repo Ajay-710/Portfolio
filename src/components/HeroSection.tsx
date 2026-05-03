@@ -91,11 +91,11 @@ export default function HeroSection() {
           </motion.h1>
           
           <motion.h2 variants={item} className="text-xl md:text-2xl text-foreground/70 font-medium mb-8 max-w-3xl leading-relaxed">
-            Cyber Security Enthusiast & <span className="text-foreground/90">AI Engineer</span>
+            Cyber Security Enthusiast, <span className="text-foreground/90">AI Engineer</span> & <span className="text-accent">n8n Automation Pro</span>
           </motion.h2>
           
-          <motion.p variants={item} className="text-foreground/50 max-w-2xl text-lg mb-12 font-light leading-relaxed">
-            Passionate about building secure systems, AI-powered agents, and performant web applications. Seeking opportunities to solve complex technical challenges and create impact.
+          <motion.p variants={item} className="text-foreground/50 max-w-2xl text-lg mb-12 font-light leading-relaxed italic">
+            "Just a dev who automates the boring stuff so I can spend more time breaking and fixing things. 🤖 n8n addict, AI agent whisperer, and professional bug generator. If it’s not automated, it’s not finished. 🚀 Building the future, no cap. 💯"
           </motion.p>
           
           <motion.div variants={item} className="flex flex-wrap justify-center gap-5 mb-14">

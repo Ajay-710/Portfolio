@@ -11,7 +11,7 @@ const certificationsData = [
     items: [
       { title: "Ethical Hacking Essentials (EHE)", issuer: "EC-Council", year: "2024", link: "https://drive.google.com/file/d/11NwASGfEzgm7O3WpcKZ2ZglD7JhHpO39/view" },
       { title: "Introduction to Ethical Hacking", issuer: "Great Learning", year: "2022", link: "https://drive.google.com/file/d/1ag9jvbxAYQitYUqq1kyN8xwkj-wjS5o6/view" },
-      { title: "Internet / Cyber Security Crash Course", issuer: "apnaLearn", year: "2023", link: "https://drive.google.com/file/d/1Lr2JsuAkxoqLbJ28M93hQgGTX81BGpb0/view" }
+      { title: "Internet / Cyber Security Crash Course", issuer: "AptLearn", year: "2023", link: "https://drive.google.com/file/d/1Lr2JsuAkxoqLbJ28M93hQgGTX81BGpb0/view" }
     ]
   },
   {
