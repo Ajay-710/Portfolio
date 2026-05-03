@@ -5,6 +5,7 @@ import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -32,11 +33,12 @@ export default function Home() {
           <a href="#home" className="text-2xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-2">
             Ajay<span className="text-foreground">.</span>
           </a>
-          <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-foreground/70">
+          <div className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-semibold text-foreground/70">
             <a href="#education" className="hover:text-accent transition-colors">Education</a>
             <a href="#experience" className="hover:text-accent transition-colors">Experience</a>
             <a href="#projects" className="hover:text-accent transition-colors">Projects</a>
             <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
+            <a href="#certifications" className="hover:text-accent transition-colors">Certifications</a>
           </div>
           <a href="mailto:pendemajay7@gmail.com" className="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-foreground text-sm font-semibold hover:bg-white/20 transition-all duration-300 border border-white/10 hover:border-accent/50 hover:text-accent">
             <span>Hire Me</span>
@@ -51,6 +53,7 @@ export default function Home() {
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
+        <CertificationsSection />
       </main>
 
       <footer className="py-16 relative overflow-hidden border-t border-white/10">
