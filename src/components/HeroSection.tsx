@@ -95,7 +95,7 @@ export default function HeroSection() {
           </motion.h2>
           
           <motion.p variants={item} className="text-foreground/50 max-w-2xl text-lg mb-12 font-light leading-relaxed italic">
-            "Just a dev who automates the boring stuff so I can spend more time breaking and fixing things. 🤖 n8n addict, AI agent whisperer, and professional bug generator. If it’s not automated, it’s not finished. 🚀 Building the future, no cap. 💯"
+            Just a dev who automates the boring stuff so I can spend more time breaking and fixing things. 🤖 n8n addict, AI agent whisperer, and professional bug generator. If it’s not automated, it’s not finished. Building the future, no cap.
           </motion.p>
           
           <motion.div variants={item} className="flex flex-wrap justify-center gap-5 mb-14">
