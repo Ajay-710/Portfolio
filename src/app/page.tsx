@@ -10,6 +10,7 @@ import { Mail, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,10 +39,13 @@ export default function Home() {
             <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
             <a href="#certifications" className="hover:text-accent transition-colors">Certifications</a>
           </div>
-          <a href="mailto:pendemajay7@gmail.com" className="group flex items-center gap-2 px-5 py-2.5 bg-background text-foreground font-bold hover:bg-accent hover:text-background transition-colors neo-box neo-text text-sm">
-            <span>Hire Me</span>
-            <ArrowUpRight size={16} />
-          </a>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <a href="mailto:pendemajay7@gmail.com" className="group flex items-center gap-2 px-5 py-2.5 bg-background text-foreground font-bold hover:bg-foreground hover:text-background transition-colors neo-box neo-text text-sm">
+              <span>Hire Me</span>
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
       </nav>
 

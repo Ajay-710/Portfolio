@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   keywords: ["Pendem Ajay", "Portfolio", "Cyber Security", "AI Engineer", "Next.js", "React", "n8n"],
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,8 +36,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Background />
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <ThemeProvider>
+          <Background />
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

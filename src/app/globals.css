@@ -1,34 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f5f5; /* zag-light */
-  --foreground: #171717; /* zag-dark */
-  --muted: #a3a3a3;
-  --accent: #059669; /* zag-accent-dark */
-  --accent-foreground: #f5f5f5;
-  
-  --zag-dark: #171717;
-  --zag-light: #f5f5f5;
-  --zag-dark-muted: #525252;
-  --zag-light-muted: #a3a3a3;
-  --zag-accent-light: #34d399;
-  --zag-accent-dark: #059669;
+  --background: #f4f4f5;
+  --foreground: #18181b;
+  --accent: #18181b;
+  --accent-foreground: #f4f4f5;
+  --muted: #a1a1aa;
   
   --zag-stroke: 2px;
   --zag-offset: 6px;
-  
-  --card: #f5f5f5;
-  --card-border: #171717;
 }
 
-/* Optional Dark Mode (Wait, maybe just default dark, user wants neobrutalist look, let's stick to dark theme by default if it fits better, or use tailwind's dark mode. Zaggonaut usually is dark or light. I'll make the default dark theme since Cyber Security themes look better in dark.) */
-:root {
-  --background: #171717;
-  --foreground: #f5f5f5;
-  --accent: #34d399;
-  --accent-foreground: #171717;
-  --card: #171717;
-  --card-border: #f5f5f5;
+.dark {
+  --background: #18181b;
+  --foreground: #f4f4f5;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --muted: #52525b;
 }
 
 @theme inline {
@@ -36,8 +24,6 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-card: var(--card);
-  --color-card-border: var(--card-border);
   --font-sans: var(--font-ibm-plex), monospace;
   --font-mono: var(--font-press-start), ui-monospace;
 }
@@ -54,12 +40,12 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--zag-dark);
-  border-left: var(--zag-stroke) solid var(--zag-light);
+  background: var(--background);
+  border-left: var(--zag-stroke) solid var(--foreground);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--zag-accent-light);
-  border: var(--zag-stroke) solid var(--zag-dark);
+  background: var(--foreground);
+  border: var(--zag-stroke) solid var(--background);
 }
 
 html {
@@ -70,18 +56,18 @@ html {
 .neo-box {
   background: var(--background);
   border: var(--zag-stroke) solid var(--foreground);
-  box-shadow: var(--zag-offset) var(--zag-offset) 0 0 var(--zag-accent-light);
+  box-shadow: var(--zag-offset) var(--zag-offset) 0 0 var(--foreground);
   transition: all 0.2s ease-in-out;
 }
 
 .neo-box:hover {
   transform: translate(calc(var(--zag-offset) / 2), calc(var(--zag-offset) / 2));
-  box-shadow: calc(var(--zag-offset) / 2) calc(var(--zag-offset) / 2) 0 0 var(--zag-accent-light);
+  box-shadow: calc(var(--zag-offset) / 2) calc(var(--zag-offset) / 2) 0 0 var(--foreground);
 }
 
 .neo-box:active {
   transform: translate(var(--zag-offset), var(--zag-offset));
-  box-shadow: 0 0 0 0 var(--zag-accent-light);
+  box-shadow: 0 0 0 0 var(--foreground);
 }
 
 .neo-text {
@@ -90,5 +76,11 @@ html {
 }
 
 .text-gradient {
-  color: var(--accent);
+  color: var(--foreground);
+}
+
+/* Add dotted grid background utility */
+.zag-dotted-grid {
+  background-image: radial-gradient(var(--muted) 1px, transparent 1px);
+  background-size: 16px 16px;
 }
