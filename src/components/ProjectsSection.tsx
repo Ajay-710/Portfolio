@@ -89,7 +89,7 @@ export default function ProjectsSection() {
           <h2 className="text-5xl font-extrabold text-foreground tracking-tight mb-6 neo-text">
             Featured <span className="text-accent">Projects</span>
           </h2>
-          <p className="text-foreground max-w-2xl text-lg font-medium bg-foreground text-background p-2 border-2 border-accent">
+          <p className="text-foreground max-w-2xl text-lg font-bold bg-background p-6 neo-box">
             A showcase of my recent work in AI, automation, and full-stack development.
           </p>
         </motion.div>
