@@ -73,8 +73,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-20 left-[-10%] w-[40rem] h-[40rem] bg-accent-2/5 rounded-full blur-[150px] pointer-events-none" />
+
       
       <div className="max-w-7xl w-full mx-auto px-6 relative z-10">
         <motion.div
@@ -83,14 +82,14 @@ export default function ProjectsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-20 flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 border-2 border-foreground bg-background mb-6 neo-box">
             <FolderGit2 size={20} className="text-accent" />
-            <span className="text-sm font-semibold tracking-wider uppercase text-foreground/80">Portfolio</span>
+            <span className="text-sm font-bold tracking-wider uppercase text-foreground neo-text">Portfolio</span>
           </div>
-          <h2 className="text-5xl font-extrabold text-foreground tracking-tight mb-6">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="text-5xl font-extrabold text-foreground tracking-tight mb-6 neo-text">
+            Featured <span className="text-accent">Projects</span>
           </h2>
-          <p className="text-foreground/50 max-w-2xl text-lg">
+          <p className="text-foreground max-w-2xl text-lg font-medium bg-foreground text-background p-2 border-2 border-accent">
             A showcase of my recent work in AI, automation, and full-stack development.
           </p>
         </motion.div>
@@ -106,27 +105,25 @@ export default function ProjectsSection() {
             <motion.div
               key={idx}
               variants={item}
-              className={`flex flex-col glass-card p-10 rounded-3xl hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10 hover:border-accent/40 transition-all duration-300 relative group overflow-hidden`}
+              className="flex flex-col p-10 neo-box relative group overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent-2/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-              
               <div className="flex justify-between items-start mb-8 relative z-10 w-full">
                 <div className="flex-1 pr-4">
-                  <h3 className="text-3xl font-bold tracking-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-accent-2 transition-colors">
+                  <h3 className="text-2xl font-bold tracking-tight mb-3 text-foreground neo-text">
                     {project.title}
                   </h3>
-                  <div className="inline-flex items-center px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-foreground/70 font-semibold tracking-wide">
+                  <div className="inline-flex items-center px-3 py-1 bg-foreground text-background border-2 border-foreground text-sm font-bold tracking-wide neo-text">
                     {project.date}
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   {project.githubLink && (
-                    <a href={project.githubLink} target="_blank" rel="noreferrer" className="p-3 bg-white/5 text-foreground/80 hover:text-accent rounded-xl border border-white/10 hover:border-accent hover:bg-accent/10 transition-colors shadow-sm">
+                    <a href={project.githubLink} target="_blank" rel="noreferrer" className="p-3 bg-background text-foreground hover:bg-accent hover:text-accent-foreground border-2 border-foreground transition-colors neo-box">
                       <FaGithub size={22} />
                     </a>
                   )}
                   {project.demoLink && (
-                    <a href={project.demoLink} target="_blank" rel="noreferrer" className="p-3 bg-white/5 text-foreground/80 hover:text-accent rounded-xl border border-white/10 hover:border-accent hover:bg-accent/10 transition-colors shadow-sm">
+                    <a href={project.demoLink} target="_blank" rel="noreferrer" className="p-3 bg-background text-foreground hover:bg-accent hover:text-accent-foreground border-2 border-foreground transition-colors neo-box">
                       <ExternalLink size={22} />
                     </a>
                   )}
@@ -135,16 +132,16 @@ export default function ProjectsSection() {
 
               <ul className="space-y-4 mb-10 flex-1 relative z-10">
                 {project.features.map((feature, i) => (
-                  <li key={i} className="text-foreground/80 leading-relaxed font-medium flex items-start gap-3 text-base">
-                    <span className="inline-block text-accent mt-1 opacity-80">▹</span>
+                  <li key={i} className="text-foreground leading-relaxed font-medium flex items-start gap-3 text-base">
+                    <span className="inline-block text-accent mt-1">▹</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-2.5 mt-auto relative z-10 pt-6 border-t border-white/10">
+              <div className="flex flex-wrap gap-2.5 mt-auto relative z-10 pt-6 border-t-2 border-foreground">
                 {project.tech.map((t, i) => (
-                  <span key={i} className="px-4 py-1.5 text-sm font-semibold bg-accent/10 text-accent rounded-xl border border-accent/20 tracking-wide">
+                  <span key={i} className="px-4 py-1.5 text-sm font-bold bg-background text-foreground border-2 border-foreground tracking-wide neo-text">
                     {t}
                   </span>
                 ))}

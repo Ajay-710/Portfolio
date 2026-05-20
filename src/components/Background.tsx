@@ -3,28 +3,20 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const Background = ({ width = '100vw', height = '100vh', cameraZ = 125, planeSize = 256, speed = 1.2 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+class Plane {
+  uniforms: Record<string, { type: string, value: number }>;
+  mesh: THREE.Mesh;
+  
+  constructor(planeSize: number) {
+    this.uniforms = {
+      time: { type: 'f', value: 0 },
+    };
+    this.mesh = this.createMesh(planeSize);
+  }
 
-  useEffect(() => {
-    if (!canvasRef.current || !containerRef.current) return;
-
-    // Plane class
-    class Plane {
-      uniforms: any;
-      mesh: THREE.Mesh;
-      
-      constructor() {
-        this.uniforms = {
-          time: { type: 'f', value: 0 },
-        };
-        this.mesh = this.createMesh();
-      }
-
-      createMesh() {
-        return new THREE.Mesh(
-          new THREE.PlaneGeometry(planeSize, planeSize, planeSize, planeSize),
+  createMesh(planeSize: number) {
+    return new THREE.Mesh(
+      new THREE.PlaneGeometry(planeSize, planeSize, planeSize, planeSize),
           new THREE.RawShaderMaterial({
             uniforms: this.uniforms,
             vertexShader: `
@@ -144,10 +136,10 @@ const Background = ({ width = '100vw', height = '100vh', cameraZ = 125, planeSiz
                 float opacity = (96.0 - length(vPosition)) / 256.0 * 0.6;
                 vec3 color = vec3(0.6);
                 
-                // Add a tint of sky blue (accent) to match the portfolio theme
+                // Add a tint of emerald (accent) to match the Zaggonaut theme
                 color.r += 0.02;
-                color.g += 0.1;
-                color.b += 0.2;
+                color.g += 0.59;
+                color.b += 0.41;
                 
                 gl_FragColor = vec4(color, opacity);
               }
@@ -156,13 +148,20 @@ const Background = ({ width = '100vw', height = '100vh', cameraZ = 125, planeSiz
           })
         );
       }
-    }
+}
+
+const Background = ({ width = '100vw', height = '100vh', cameraZ = 125, planeSize = 256, speed = 1.2 }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current || !containerRef.current) return;
 
     // Three.js setup
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: false });
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-    const plane = new Plane();
+    const plane = new Plane(planeSize);
     
     let targetTime = 0;
     let currentTime = 0;

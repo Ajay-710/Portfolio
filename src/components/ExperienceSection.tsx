@@ -38,7 +38,6 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-24 relative overflow-hidden">
-      <div className="absolute top-0 right-[-10%] w-[40rem] h-[40rem] bg-gradient-to-l from-accent-2/5 to-transparent rounded-full blur-[150px] pointer-events-none" />
       
       <div className="max-w-5xl w-full mx-auto px-6 relative z-10">
         <motion.div
@@ -47,16 +46,16 @@ export default function ExperienceSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-20 flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 border-2 border-foreground bg-background mb-6 neo-box">
             <Briefcase size={20} className="text-accent" />
-            <span className="text-sm font-semibold tracking-wider uppercase text-foreground/80">Career Path</span>
+            <span className="text-sm font-bold tracking-wider uppercase text-foreground neo-text">Career Path</span>
           </div>
-          <h2 className="text-5xl font-extrabold text-foreground tracking-tight">
-            Professional <span className="text-gradient">Experience</span>
+          <h2 className="text-5xl font-extrabold text-foreground tracking-tight neo-text">
+            Professional <span className="text-accent">Experience</span>
           </h2>
         </motion.div>
 
-        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-accent/5 before:via-accent/20 before:to-accent/5 before:rounded-full">
+        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-foreground">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -66,29 +65,29 @@ export default function ExperienceSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-accent text-accent-foreground shadow-[0_0_15px_rgba(14,165,233,0.5)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute left-0 md:left-1/2 -ml-5 md:ml-0 overflow-hidden transform group-hover:scale-125 transition-all duration-300 z-10">
+              <div className="flex items-center justify-center w-10 h-10 border-4 border-foreground bg-accent text-accent-foreground shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 absolute left-0 md:left-1/2 -ml-5 md:ml-0 overflow-hidden transform group-hover:scale-125 transition-all duration-300 z-10">
                 <Briefcase size={16} />
               </div>
 
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] ml-12 md:ml-0 p-8 rounded-3xl glass-card hover:border-accent/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] ml-12 md:ml-0 p-8 neo-box">
                 <div className="flex flex-col mb-5 gap-1.5">
-                  <h3 className="font-extrabold text-2xl text-foreground/90 tracking-tight">{exp.role}</h3>
-                  <div className="text-accent font-bold text-lg">{exp.company}</div>
+                  <h3 className="font-extrabold text-2xl text-foreground tracking-tight neo-text">{exp.role}</h3>
+                  <div className="text-accent font-bold text-lg neo-text">{exp.company}</div>
                   
-                  <div className="flex flex-wrap items-center gap-3 mt-3 text-sm text-foreground/70 font-medium">
-                    <span className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
+                  <div className="flex flex-wrap items-center gap-3 mt-3 text-sm text-foreground font-bold">
+                    <span className="flex items-center gap-1.5 bg-background border-2 border-foreground px-3 py-1.5 neo-text">
                       <Calendar size={14} className="text-accent" /> {exp.date}
                     </span>
-                    <span className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
-                      <MapPin size={14} className="text-accent-2" /> {exp.location}
+                    <span className="flex items-center gap-1.5 bg-background border-2 border-foreground px-3 py-1.5 neo-text">
+                      <MapPin size={14} className="text-accent" /> {exp.location}
                     </span>
                   </div>
                 </div>
                 
-                <ul className="space-y-3 pt-2 border-t border-white/10">
+                <ul className="space-y-3 pt-4 border-t-2 border-foreground mt-4">
                   {exp.descriptions.map((desc, i) => (
-                    <li key={i} className="text-sm text-foreground/70 leading-relaxed flex items-start">
-                      <span className="text-accent mt-1.5 mr-3 w-1.5 h-1.5 bg-accent rounded-full shrink-0 shadow-[0_0_8px_rgba(14,165,233,0.8)]" />
+                    <li key={i} className="text-sm text-foreground leading-relaxed flex items-start font-medium">
+                      <span className="text-accent mt-1.5 mr-3 w-2 h-2 bg-accent shrink-0 border border-foreground" />
                       {desc}
                     </li>
                   ))}

@@ -73,9 +73,6 @@ export default function CertificationsSection() {
 
   return (
     <section id="certifications" className="py-24 relative overflow-hidden">
-      {/* Decorative gradient elements */}
-      <div className="absolute top-20 right-[-10%] w-[30rem] h-[30rem] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 left-[-10%] w-[25rem] h-[25rem] bg-accent-2/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl w-full mx-auto px-6 relative z-10">
         <motion.div
@@ -84,14 +81,14 @@ export default function CertificationsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 border-2 border-foreground bg-background mb-6 neo-box">
             <GraduationCap size={20} className="text-accent" />
-            <span className="text-sm font-semibold tracking-wider uppercase text-foreground/80">Continuous Learning</span>
+            <span className="text-sm font-bold tracking-wider uppercase text-foreground neo-text">Continuous Learning</span>
           </div>
-          <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight">
-            Licenses & <span className="text-gradient">Certifications</span>
+          <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight neo-text">
+            Licenses & <span className="text-accent">Certifications</span>
           </h2>
-          <p className="text-foreground/50 max-w-2xl text-lg">
+          <p className="text-foreground max-w-2xl text-lg font-bold neo-text">
             Professional certifications validating my expertise in cybersecurity, AI/ML, and modern programming.
           </p>
         </motion.div>
@@ -102,9 +99,9 @@ export default function CertificationsSection() {
             <button
               key={cat.category}
               onClick={() => setActiveCategory(cat.category)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 border ${activeCategory === cat.category
-                  ? "bg-accent/10 border-accent text-accent shadow-[0_0_20px_rgba(14,165,233,0.2)]"
-                  : "bg-white/5 border-white/10 text-foreground/70 hover:bg-white/10 hover:text-foreground hover:border-white/20"
+              className={`flex items-center gap-2 px-6 py-3 text-sm font-bold transition-all duration-300 border-2 border-foreground neo-text ${activeCategory === cat.category
+                  ? "bg-accent text-accent-foreground neo-box"
+                  : "bg-background text-foreground hover:bg-accent hover:text-accent-foreground neo-box"
                 }`}
             >
               {cat.icon}
@@ -132,32 +129,30 @@ export default function CertificationsSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className="glass-card rounded-2xl p-6 hover:border-accent/30 transition-all duration-300 relative group flex flex-col h-full"
+                    className="neo-box p-6 relative group flex flex-col h-full bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
                     <div className="relative z-10 flex-grow">
-                      <h3 className="text-xl font-bold text-foreground/90 mb-4 leading-tight group-hover:text-accent transition-colors">
+                      <h3 className="text-xl font-bold text-foreground mb-4 leading-tight group-hover:text-accent-foreground transition-colors neo-text">
                         {cert.title}
                       </h3>
-                      <div className="flex flex-col gap-2.5 text-sm text-foreground/60 font-medium">
+                      <div className="flex flex-col gap-2.5 text-sm text-foreground font-bold group-hover:text-accent-foreground neo-text">
                         <span className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent-2" />
+                          <div className="w-2 h-2 bg-foreground group-hover:bg-accent-foreground border border-foreground" />
                           {cert.issuer}
                         </span>
                         <span className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                          <div className="w-2 h-2 bg-foreground group-hover:bg-accent-foreground border border-foreground" />
                           {cert.year}
                         </span>
                       </div>
                     </div>
 
-                    <div className="relative z-10 mt-8 pt-6 border-t border-white/10">
+                    <div className="relative z-10 mt-8 pt-6 border-t-2 border-foreground">
                       <a
                         href={cert.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-2 transition-colors group/link"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-foreground group-hover:text-accent-foreground transition-colors group/link neo-text"
                       >
                         View Certificate
                         <ExternalLink size={16} className="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />

@@ -21,7 +21,7 @@ export default function EducationSection() {
 
   return (
     <section id="education" className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-[-10%] w-[30rem] h-[30rem] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+
       
       <div className="max-w-5xl w-full mx-auto px-6 relative z-10">
         <motion.div
@@ -30,12 +30,12 @@ export default function EducationSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 border-2 border-foreground bg-background mb-6 neo-box">
             <GraduationCap size={20} className="text-accent" />
-            <span className="text-sm font-semibold tracking-wider uppercase text-foreground/80">Academic Background</span>
+            <span className="text-sm font-bold tracking-wider uppercase text-foreground neo-text">Academic Background</span>
           </div>
-          <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight">
-            Education <span className="text-gradient">& Certifications</span>
+          <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight neo-text">
+            Education <span className="text-accent">& Certifications</span>
           </h2>
         </motion.div>
 
@@ -45,45 +45,43 @@ export default function EducationSection() {
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div variants={item} className="glass-card p-10 rounded-3xl hover:border-accent/40 transition-all duration-300 group relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-bl-full pointer-events-none group-hover:bg-accent/10 transition-colors duration-500" />
-            
+          <motion.div variants={item} className="p-10 neo-box relative group overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 relative z-10">
               <div className="space-y-3">
-                <h3 className="text-3xl font-bold tracking-tight text-foreground/90 group-hover:text-accent transition-colors">Alpha College of Engineering</h3>
-                <p className="text-foreground/70 font-medium text-lg">Bachelor's Degree in Information Technology</p>
-                <div className="inline-flex items-center gap-2 mt-2 px-4 py-1.5 bg-accent/10 text-accent rounded-lg font-bold border border-accent/20">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground neo-text">Alpha College of Engineering</h3>
+                <p className="text-foreground font-medium text-lg">Bachelor&apos;s Degree in Information Technology</p>
+                <div className="inline-flex items-center gap-2 mt-2 px-4 py-1.5 bg-background text-foreground border-2 border-foreground font-bold neo-text">
                   <span className="text-sm tracking-wide">CGPA:</span> 8.47
                 </div>
               </div>
               <div className="text-left md:text-right space-y-2">
-                <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-semibold tracking-wider uppercase">
+                <div className="inline-block px-4 py-1.5 border-2 border-foreground bg-background text-sm font-bold tracking-wider uppercase neo-text">
                   Sep 2023 - May 2027
                 </div>
-                <div className="text-foreground/50 text-sm font-medium">Chennai, TN</div>
+                <div className="text-foreground text-sm font-bold neo-text">Chennai, TN</div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-              <div className="flex gap-4 items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="mt-1 shrink-0 bg-accent/10 p-3 rounded-xl text-accent ring-1 ring-accent/20">
-                  <BookOpen size={20} />
+              <div className="flex gap-4 items-start p-6 bg-background border-2 border-foreground hover:bg-accent hover:text-accent-foreground transition-colors neo-box group/card">
+                <div className="mt-1 shrink-0 bg-background text-foreground border-2 border-foreground p-3">
+                  <BookOpen size={20} className="group-hover/card:text-accent-foreground text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground/90 mb-2 text-lg tracking-tight">Coursework</h4>
-                  <p className="text-foreground/60 text-sm leading-relaxed">
+                  <h4 className="font-bold text-foreground group-hover/card:text-accent-foreground mb-2 text-lg tracking-tight neo-text">Coursework</h4>
+                  <p className="text-foreground font-medium text-sm leading-relaxed group-hover/card:text-accent-foreground">
                     Data Structures and Algorithms, Data Science, Database Management Systems, Object Oriented Programming, Operating Systems, Artificial Intelligence, Machine Learning, Computer Vision, Python Programming, Full Stack Web Development.
                   </p>
                 </div>
               </div>
               
-              <div className="flex gap-4 items-start p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="mt-1 shrink-0 bg-accent-2/10 p-3 rounded-xl text-accent-2 ring-1 ring-accent-2/20">
-                  <Shield size={20} />
+              <div className="flex gap-4 items-start p-6 bg-background border-2 border-foreground hover:bg-accent hover:text-accent-foreground transition-colors neo-box group/card2">
+                <div className="mt-1 shrink-0 bg-background text-foreground border-2 border-foreground p-3">
+                  <Shield size={20} className="group-hover/card2:text-accent-foreground text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground/90 mb-2 text-lg tracking-tight">Specialized Studies</h4>
-                  <p className="text-foreground/60 text-sm leading-relaxed">
+                  <h4 className="font-bold text-foreground group-hover/card2:text-accent-foreground mb-2 text-lg tracking-tight neo-text">Specialized Studies</h4>
+                  <p className="text-foreground font-medium text-sm leading-relaxed group-hover/card2:text-accent-foreground">
                     Cyber Security, Penetration Testing, Vulnerability Assessment, Generative AI, AI Agents, n8n, Firebase.
                   </p>
                 </div>
