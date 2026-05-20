@@ -37,7 +37,7 @@ class Plane {
         varying vec2 vUv;
         void main() {
           float dist = distance(vUv, vec2(0.5));
-          float alpha = smoothstep(0.5, 0.1, dist) * 0.5;
+          float alpha = smoothstep(0.5, 0.05, dist) * 0.9;
           gl_FragColor = vec4(uColor, alpha);
         }
       `,
@@ -88,7 +88,7 @@ export default function Background() {
 
     // Initial color based on theme: black mountain for light, white for dark
     // Use theme from ref to avoid triggering effect on theme change
-    const wireColor = planeRef.current?.material.uniforms.uColor.value.getHexString() || "18181b";
+    const wireColor = planeRef.current?.material.uniforms.uColor.value.getHexString() || "000000";
     const plane = new Plane("#" + wireColor);
     planeRef.current = plane;
     scene.add(plane.mesh);
@@ -131,14 +131,14 @@ export default function Background() {
   // Update color when theme changes
   useEffect(() => {
     if (planeRef.current) {
-      planeRef.current.updateColor(resolvedTheme === "dark" ? "#f4f4f5" : "#18181b");
+      planeRef.current.updateColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
     }
   }, [resolvedTheme]);
 
   return (
     <div 
       ref={containerRef} 
-      className="fixed inset-0 z-0 pointer-events-none opacity-40 transition-opacity duration-300"
+      className="fixed inset-0 z-0 pointer-events-none opacity-80 transition-opacity duration-300"
       style={{ background: "transparent" }}
     />
   );
