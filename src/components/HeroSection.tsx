@@ -48,7 +48,7 @@ export default function HeroSection() {
           </motion.h2>
           
           <motion.p variants={item} className="text-foreground max-w-2xl text-lg mb-12 font-bold leading-relaxed bg-background p-6 neo-box">
-            Just a dev who automates the boring stuff so I can spend more time breaking and fixing things. n8n addict, AI agent whisperer, and professional bug generator. If it&apos;s not automated, it&apos;s not finished. Building the future, no cap.
+            I don&apos;t just find vulnerabilities; I build the AI that hunts them. Bridging the gap between offensive security and intelligent automation. If your system can be broken, I&apos;ll find a way. If it can be automated, I&apos;ve already done it.
           </motion.p>
           
           <motion.div variants={item} className="flex flex-wrap justify-center gap-6 mb-14">
