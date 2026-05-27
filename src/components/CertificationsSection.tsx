@@ -129,19 +129,19 @@ export default function CertificationsSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className="neo-box p-6 relative group flex flex-col h-full bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                    className="neo-box p-6 relative group flex flex-col h-full transition-colors"
                   >
                     <div className="relative z-10 flex-grow">
-                      <h3 className="text-xl font-bold text-foreground mb-4 leading-tight group-hover:text-accent-foreground transition-colors neo-text">
+                      <h3 className="text-xl font-bold text-foreground mb-4 leading-tight transition-colors neo-text">
                         {cert.title}
                       </h3>
-                      <div className="flex flex-col gap-2.5 text-sm text-foreground font-bold group-hover:text-accent-foreground neo-text">
+                      <div className="flex flex-col gap-2.5 text-sm text-foreground font-bold neo-text">
                         <span className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-foreground group-hover:bg-accent-foreground border border-foreground" />
+                          <div className="w-2 h-2 bg-foreground border border-foreground" />
                           {cert.issuer}
                         </span>
                         <span className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-foreground group-hover:bg-accent-foreground border border-foreground" />
+                          <div className="w-2 h-2 bg-foreground border border-foreground" />
                           {cert.year}
                         </span>
                       </div>
@@ -152,7 +152,7 @@ export default function CertificationsSection() {
                         href={cert.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-foreground group-hover:text-accent-foreground transition-colors group/link neo-text"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-foreground transition-colors group/link neo-text"
                       >
                         View Certificate
                         <ExternalLink size={16} className="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />

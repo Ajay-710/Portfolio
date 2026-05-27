@@ -5,6 +5,7 @@ import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
+import AchievementsSection from "@/components/AchievementsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -38,6 +39,7 @@ export default function Home() {
             <a href="#projects" className="hover:text-accent transition-colors">Projects</a>
             <a href="#skills" className="hover:text-accent transition-colors">Skills</a>
             <a href="#certifications" className="hover:text-accent transition-colors">Certifications</a>
+            <a href="#achievements" className="hover:text-accent transition-colors">Achievements</a>
           </div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -56,6 +58,7 @@ export default function Home() {
         <ProjectsSection />
         <SkillsSection />
         <CertificationsSection />
+        <AchievementsSection />
       </main>
 
       <footer className="py-16 relative overflow-hidden border-t-2 border-foreground bg-background">
