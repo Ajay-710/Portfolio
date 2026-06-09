@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function HeroSection() {
@@ -52,6 +52,10 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.div variants={item} className="flex flex-wrap justify-center gap-6 mb-14">
+            <a href="/resume.pdf" download="Pendem_Ajay_Resume.pdf" className="neo-box px-8 py-4 bg-accent text-background hover:bg-foreground hover:text-background font-bold flex items-center gap-2 neo-text text-sm">
+              <Download size={18} />
+              <span>Download Resume</span>
+            </a>
             <a href="mailto:pendemajay7@gmail.com" className="neo-box px-8 py-4 bg-background text-foreground hover:bg-accent hover:text-background font-bold flex items-center gap-2 neo-text text-sm">
               <Mail size={18} />
               <span>Contact Me</span>
