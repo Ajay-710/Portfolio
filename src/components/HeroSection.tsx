@@ -52,7 +52,7 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.div variants={item} className="flex flex-wrap justify-center gap-6 mb-14">
-            <a href="/resume.pdf" download="Pendem_Ajay_Resume.pdf" className="neo-box px-8 py-4 bg-accent text-background hover:bg-foreground hover:text-background font-bold flex items-center gap-2 neo-text text-sm">
+            <a href="resume.pdf" download="Pendem_Ajay_Resume.pdf" className="neo-box px-8 py-4 bg-background text-foreground hover:bg-accent hover:text-background font-bold flex items-center gap-2 neo-text text-sm">
               <Download size={18} />
               <span>Download Resume</span>
             </a>
