@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f4f5;
+  --foreground: #18181b;
+  --accent: #18181b;
+  --accent-foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  
+  --zag-stroke: 2px;
+  --zag-offset: 6px;
+}
+
+.dark {
+  --background: #18181b;
+  --foreground: #f4f4f5;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --muted: #52525b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-ibm-plex), monospace;
+  --font-mono: var(--font-press-start), ui-monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: var(--zag-stroke) solid var(--foreground);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border: var(--zag-stroke) solid var(--background);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+@layer components {
+  /* Zaggonaut / Neobrutalism Utilities */
+  .neo-box {
+    background-color: var(--background);
+    border: var(--zag-stroke) solid var(--foreground);
+    box-shadow: var(--zag-offset) var(--zag-offset) 0 0 var(--foreground);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .neo-box:hover {
+    transform: translate(calc(var(--zag-offset) / 2), calc(var(--zag-offset) / 2));
+    box-shadow: calc(var(--zag-offset) / 2) calc(var(--zag-offset) / 2) 0 0 var(--foreground);
+  }
+
+  .neo-box:active {
+    transform: translate(var(--zag-offset), var(--zag-offset));
+    box-shadow: 0 0 0 0 var(--foreground);
+  }
+
+  .neo-text {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+  }
+
+  .text-gradient {
+    color: var(--foreground);
+  }
+
+  /* Add dotted grid background utility */
+  .zag-dotted-grid {
+    background-image: radial-gradient(var(--muted) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+}
